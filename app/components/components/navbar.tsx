@@ -12,7 +12,7 @@ export default function Navbar() {
       <NavigationMenuList>
         {navLinksGuest.map((link) => (
           <NavigationMenuItem
-            className="p-2 hover:rounded hover:bg-background hover:text-foreground"
+            className="px-4 py-2 hover:rounded hover:bg-accent hover:text-accent-foreground"
             key={link.value}
           >
             <NavigationMenuLink className="hover:underline" href={link.value}>

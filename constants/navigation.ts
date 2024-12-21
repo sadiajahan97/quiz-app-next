@@ -3,7 +3,7 @@ export const navLinksGuest: NavLink[] = [
   { label: "Quizzes", value: "/quizzes" },
   { label: "Leaderboard", value: "/leaderboard" },
   { label: "About", value: "/about" },
-  { label: "Login", value: "/login" },
+  { label: "Sign In", value: "/sign-in" },
 ];
 
 export const navLinksUser: NavLink[] = [
@@ -13,5 +13,5 @@ export const navLinksUser: NavLink[] = [
   { label: "Leaderboard", value: "/leaderboard" },
   { label: "Profile", value: "/profile" },
   { label: "About", value: "/about" },
-  { label: "Logout", value: "/logout" },
+  { label: "Sign Out", value: "/sign-in" },
 ];
