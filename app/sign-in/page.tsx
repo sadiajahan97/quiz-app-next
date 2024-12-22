@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Button, buttonVariants } from "@quiz-app/components/ui/button";
+import { Button } from "@quiz-app/components/ui/button";
 import SignInForm from "./components/sign-in-form";
 import Link from "next/link";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
@@ -27,7 +27,7 @@ export default function SignInPage() {
         </Link>
       </p>
       <p className="mt-2 text-center text-xs">Or create a new account</p>
-      <Button className={buttonVariants({ variant: "ghost" })}>Sign Up</Button>
+      <Button>Sign Up</Button>
     </main>
   );
 }
