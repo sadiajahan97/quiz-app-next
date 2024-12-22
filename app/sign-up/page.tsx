@@ -1,23 +1,20 @@
 import { Metadata } from "next";
-import { Button } from "@quiz-app/components/ui/button";
-import SignInForm from "./components/sign-in-form";
+import SignUpForm from "./components/sign-up-form";
 import Link from "next/link";
+import { Button } from "@quiz-app/components/ui/button";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 
 export const metadata: Metadata = {
-  title: "Quiz App | Sign In",
+  title: "Quiz App | Sign Up",
   description: "Created by Sadia Iffat Jahan",
 };
 
-export default function SignInPage() {
+export default function SignUpPage() {
   return (
     <main className="mx-auto flex h-screen w-fit flex-col justify-center gap-4">
-      <SignInForm />
-      <Link className="text-xs hover:underline" href="/forgot-password">
-        Forgot Password?
-      </Link>
+      <SignUpForm />
       <p className="mt-2 text-center text-xs leading-none">
-        Or sign in with{" "}
+        Or sign up with{" "}
         <Link href="https://accounts.google.com/">
           <FaGoogle className="inline" />
         </Link>{" "}
@@ -26,9 +23,9 @@ export default function SignInPage() {
           <FaFacebook className="inline" />
         </Link>
       </p>
-      <p className="mt-2 text-center text-xs">Or create a new account</p>
+      <p className="mt-2 text-center text-xs">Already have an account?</p>
       <Button>
-        <Link href="/sign-up">Sign Up</Link>
+        <Link href="/sign-in">Sign In</Link>
       </Button>
     </main>
   );

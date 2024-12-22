@@ -3,7 +3,7 @@ import { Roboto_Mono } from "next/font/google";
 import Header from "./components/header";
 import "./globals.css";
 
-const robotoMono = Roboto_Mono({});
+const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Quiz App | Home",
