@@ -11,8 +11,7 @@ import { Label } from "@quiz-app/components/ui/label";
 
 export default function SignInForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
-  const { register, setValue, watch } = useForm<AuthInput>();
-  console.log(watch("rememberUser"));
+  const { register, watch } = useForm<AuthInput>();
   return (
     <form className="flex flex-col gap-4">
       <Input
@@ -36,10 +35,15 @@ export default function SignInForm() {
       </div>
       <div className="flex items-center gap-2">
         <Checkbox
+          checked={watch("rememberUser")}
           id="remember-user"
-          onClick={() => setValue("rememberUser", !watch("rememberUser"))}
+          onCheckedChange={(checked) =>
+            register("rememberUser").onChange({
+              target: { name: "rememberUser", value: checked },
+            })
+          }
+          {...register("rememberUser")}
         />
-        <Input type="hidden" {...register("rememberUser")} />
         <Label
           className="text-xs font-normal tracking-widest"
           htmlFor="remember-user"
