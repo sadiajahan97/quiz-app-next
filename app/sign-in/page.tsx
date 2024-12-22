@@ -1,10 +1,7 @@
 import { Metadata } from "next";
-import { Input } from "@quiz-app/components/ui/input";
 import { Button, buttonVariants } from "@quiz-app/components/ui/button";
-import { Checkbox } from "@quiz-app/components/ui/checkbox";
-import InputPassword from "./components/input-password";
+import SignInForm from "./components/sign-in-form";
 import Link from "next/link";
-import { Label } from "@quiz-app/components/ui/label";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 
 export const metadata: Metadata = {
@@ -15,18 +12,7 @@ export const metadata: Metadata = {
 export default function SignInPage() {
   return (
     <main className="mx-auto flex h-screen w-fit flex-col justify-center gap-4">
-      <Input className="w-60" placeholder="Email" />
-      <InputPassword />
-      <div className="flex items-center gap-2">
-        <Checkbox id="remember-me" />
-        <Label
-          className="text-xs font-normal tracking-widest"
-          htmlFor="remember-me"
-        >
-          Remember Me
-        </Label>
-      </div>
-      <Button className={buttonVariants({ variant: "ghost" })}>Sign In</Button>
+      <SignInForm />
       <Link className="text-xs hover:underline" href="/forgot-password">
         Forgot Password?
       </Link>
