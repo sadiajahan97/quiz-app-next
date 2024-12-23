@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Button } from "@quiz-app/components/ui/button";
-import SignInForm from "./components/sign-in-form";
+import { SignInForm } from "./components/sign-in-form";
 import Link from "next/link";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 

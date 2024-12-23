@@ -9,7 +9,16 @@ export const newUser = z
       .email("Invalid email format"),
     password: z.string().nonempty("Password is required"),
     confirmPassword: z.string(),
-    displayPicture: z.string().optional(),
+    displayPicture: z
+      .any()
+      .optional()
+      .transform((file) => {
+        if (file instanceof FileList) {
+          return file[0];
+        } else if (file instanceof File) {
+          return file;
+        }
+      }),
   })
   .refine((data) => data.confirmPassword === data.password, {
     message: "Passwords do not match",

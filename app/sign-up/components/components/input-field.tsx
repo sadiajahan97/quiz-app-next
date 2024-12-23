@@ -5,10 +5,7 @@ interface InputFieldProps {
   errorMessage: string | undefined;
 }
 
-export default function InputField({
-  children,
-  errorMessage,
-}: InputFieldProps) {
+export function InputField({ children, errorMessage }: InputFieldProps) {
   return (
     <div>
       {children}

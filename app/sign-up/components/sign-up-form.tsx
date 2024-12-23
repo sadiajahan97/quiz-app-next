@@ -4,13 +4,13 @@ import * as React from "react";
 import { Button } from "@quiz-app/components/ui/button";
 import { Input } from "@quiz-app/components/ui/input";
 import { useForm } from "react-hook-form";
-import { InputPassword } from "@quiz-app/components/ui/input-password";
+import { InputPassword } from "@quiz-app/components/input-password";
 import { Label } from "@quiz-app/components/ui/label";
 import { NewUser, newUser } from "@quiz-app/schemas/sign-up";
 import { zodResolver } from "@hookform/resolvers/zod";
-import InputField from "./components/input-field";
+import { InputField } from "./components/input-field";
 
-export default function SignUpForm() {
+export function SignUpForm() {
   const {
     formState: { errors },
     handleSubmit,
@@ -40,15 +40,17 @@ export default function SignUpForm() {
           {...register("confirmPassword")}
         />
       </InputField>
-      <Label htmlFor="display-picture">
-        Choose a profile picture &#40;optional&#41;:
-      </Label>
-      <Input
-        accept="image/*"
-        id="display-picture"
-        type="file"
-        {...register("displayPicture")}
-      />
+      <div>
+        <Label htmlFor="display-picture">
+          Choose a profile picture &#40;optional&#41;
+        </Label>
+        <Input
+          accept="image/*"
+          id="display-picture"
+          type="file"
+          {...register("displayPicture")}
+        />
+      </div>
       <Button>Sign Up</Button>
     </form>
   );

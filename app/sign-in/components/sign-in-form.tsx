@@ -5,11 +5,11 @@ import { Input } from "@quiz-app/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Checkbox } from "@quiz-app/components/ui/checkbox";
 import { Label } from "@quiz-app/components/ui/label";
-import { InputPassword } from "@quiz-app/components/ui/input-password";
+import { InputPassword } from "@quiz-app/components/input-password";
 import { UserAuth, userAuth } from "@quiz-app/schemas/sign-in";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-export default function SignInForm() {
+export function SignInForm() {
   const { register, watch } = useForm<UserAuth>({
     resolver: zodResolver(userAuth),
   });

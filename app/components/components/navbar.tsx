@@ -6,7 +6,7 @@ import {
 } from "@quiz-app/components/ui/navigation-menu";
 import { navLinksGuest } from "@quiz-app/constants/navigation";
 
-export default function Navbar() {
+export function Navbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
