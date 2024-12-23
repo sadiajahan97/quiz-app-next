@@ -12,7 +12,9 @@ export default function InputField({
   return (
     <div>
       {children}
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && (
+        <p className="mt-1 text-xs text-destructive">* {errorMessage}</p>
+      )}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { Button } from "@quiz-app/components/ui/button";
 import { Input } from "@quiz-app/components/ui/input";
 import { useForm } from "react-hook-form";
@@ -12,12 +13,18 @@ import InputField from "./components/input-field";
 export default function SignUpForm() {
   const {
     formState: { errors },
+    handleSubmit,
     register,
   } = useForm<NewUser>({
     resolver: zodResolver(newUser),
   });
+
+  function onSubmit(data: NewUser) {
+    console.log(data);
+  }
+
   return (
-    <form className="flex flex-col gap-4">
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <InputField errorMessage={errors.name?.message}>
         <Input className="w-60" placeholder="Full Name" {...register("name")} />
       </InputField>
