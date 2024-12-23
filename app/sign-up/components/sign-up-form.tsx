@@ -40,15 +40,17 @@ export default function SignUpForm() {
           {...register("confirmPassword")}
         />
       </InputField>
-      <Label htmlFor="display-picture">
-        Choose a profile picture &#40;optional&#41;:
-      </Label>
-      <Input
-        accept="image/*"
-        id="display-picture"
-        type="file"
-        {...register("displayPicture")}
-      />
+      <div>
+        <Label htmlFor="display-picture">
+          Choose a profile picture &#40;optional&#41;
+        </Label>
+        <Input
+          accept="image/*"
+          id="display-picture"
+          type="file"
+          {...register("displayPicture")}
+        />
+      </div>
       <Button>Sign Up</Button>
     </form>
   );
