@@ -1,4 +1,4 @@
-export const navLinksGuest: NavLink[] = [
+export const navLinksGuest: NavLinkInterface[] = [
   { label: "Home", value: "/" },
   { label: "Quizzes", value: "/quizzes" },
   { label: "Leaderboard", value: "/leaderboard" },
@@ -6,7 +6,7 @@ export const navLinksGuest: NavLink[] = [
   { label: "Sign In", value: "/sign-in" },
 ];
 
-export const navLinksUser: NavLink[] = [
+export const navLinksUser: NavLinkInterface[] = [
   { label: "Home", value: "/" },
   { label: "Quizzes", value: "/quizzes" },
   { label: "Create Quiz", value: "/create-quiz" },
