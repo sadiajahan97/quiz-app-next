@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 export default function SignInPage() {
   return (
-    <main className="mx-auto flex h-screen w-fit flex-col justify-center gap-4">
+    <main className="flex grow flex-col items-center justify-center gap-4">
       <SignInForm />
       <Link className="text-xs hover:underline" href="/forgot-password">
         Forgot Password?
       </Link>
-      <p className="mt-2 text-center text-xs leading-none">
+      <p className="text-xs leading-none">
         Or sign in with{" "}
         <Link href="https://accounts.google.com/">
           <FaGoogle className="inline" />
@@ -26,7 +26,7 @@ export default function SignInPage() {
           <FaFacebook className="inline" />
         </Link>
       </p>
-      <p className="mt-2 text-center text-xs">Or create a new account</p>
+      <p className="text-xs">Or create a new account</p>
       <Button>
         <Link href="/sign-up">Sign Up</Link>
       </Button>

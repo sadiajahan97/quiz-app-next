@@ -10,7 +10,7 @@ import { UserAuth, userAuth } from "@quiz-app/schemas/sign-in";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export function SignInForm() {
-  const { register, watch } = useForm<UserAuth>({
+  const { register, setValue, watch } = useForm<UserAuth>({
     resolver: zodResolver(userAuth),
   });
   return (
@@ -22,11 +22,8 @@ export function SignInForm() {
           checked={watch("rememberUser")}
           id="remember-user"
           onCheckedChange={(checked) =>
-            register("rememberUser").onChange({
-              target: { name: "rememberUser", value: checked },
-            })
+            setValue("rememberUser", checked as boolean)
           }
-          {...register("rememberUser")}
         />
         <Label
           className="text-xs font-normal tracking-widest"
@@ -35,7 +32,12 @@ export function SignInForm() {
           Remember Me
         </Label>
       </div>
-      <Button disabled={!(watch("email") && watch("password"))}>Sign In</Button>
+      <Button
+        className="mx-auto w-fit"
+        disabled={!(watch("email") && watch("password"))}
+      >
+        Sign In
+      </Button>
     </form>
   );
 }

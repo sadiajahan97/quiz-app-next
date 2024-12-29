@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function SignUpPage() {
   return (
-    <main className="mx-auto flex h-screen w-fit flex-col justify-center gap-4">
+    <main className="flex grow flex-col items-center justify-center gap-4">
       <SignUpForm />
-      <p className="mt-2 text-center text-xs leading-none">
+      <p className="text-xs leading-none">
         Or sign up with{" "}
         <Link href="https://accounts.google.com/">
           <FaGoogle className="inline" />
@@ -23,7 +23,7 @@ export default function SignUpPage() {
           <FaFacebook className="inline" />
         </Link>
       </p>
-      <p className="mt-2 text-center text-xs">Already have an account?</p>
+      <p className="text-xs">Already have an account?</p>
       <Button>
         <Link href="/sign-in">Sign In</Link>
       </Button>

@@ -51,7 +51,7 @@ export function SignUpForm() {
           {...register("displayPicture")}
         />
       </div>
-      <Button>Sign Up</Button>
+      <Button className="mx-auto w-fit">Sign Up</Button>
     </form>
   );
 }

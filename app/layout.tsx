@@ -17,7 +17,9 @@ export default function HomeLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoMono.className} antialiased`}>
+      <body
+        className={`${robotoMono.className} flex h-screen flex-col overflow-y-hidden antialiased`}
+      >
         <Header />
         {children}
       </body>
