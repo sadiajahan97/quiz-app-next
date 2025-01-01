@@ -1,9 +1,10 @@
 "use client";
 
+import { Eye, EyeOff } from "lucide-react";
 import * as React from "react";
+
 import { Input } from "./ui/input";
 import { Toggle } from "./ui/toggle";
-import { Eye, EyeOff } from "lucide-react";
 
 export function InputPassword(props: React.ComponentProps<"input">) {
   const [isPasswordVisible, setIsPasswordVisible] =

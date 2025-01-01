@@ -1,13 +1,15 @@
 "use client";
 
-import { Button } from "@quiz-app/components/ui/button";
-import { Input } from "@quiz-app/components/ui/input";
-import { useForm } from "react-hook-form";
-import { Checkbox } from "@quiz-app/components/ui/checkbox";
-import { Label } from "@quiz-app/components/ui/label";
-import { InputPassword } from "@quiz-app/components/input-password";
-import { UserAuth, userAuth } from "@quiz-app/schemas/sign-in";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+import { InputPassword } from "@quiz-app/components/input-password";
+import { Button } from "@quiz-app/components/ui/button";
+import { Checkbox } from "@quiz-app/components/ui/checkbox";
+import { Input } from "@quiz-app/components/ui/input";
+import { Label } from "@quiz-app/components/ui/label";
+import { UserAuth, userAuth } from "@quiz-app/schemas/sign-in";
+
 
 export function SignInForm() {
   const { register, setValue, watch } = useForm<UserAuth>({

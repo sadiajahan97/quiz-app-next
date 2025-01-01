@@ -1,13 +1,15 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
 import * as React from "react";
+import { useForm } from "react-hook-form";
+
+import { InputPassword } from "@quiz-app/components/input-password";
 import { Button } from "@quiz-app/components/ui/button";
 import { Input } from "@quiz-app/components/ui/input";
-import { useForm } from "react-hook-form";
-import { InputPassword } from "@quiz-app/components/input-password";
 import { Label } from "@quiz-app/components/ui/label";
 import { NewUser, newUser } from "@quiz-app/schemas/sign-up";
-import { zodResolver } from "@hookform/resolvers/zod";
+
 import { InputField } from "./components/input-field";
 
 export function SignUpForm() {

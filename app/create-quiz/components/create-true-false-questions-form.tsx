@@ -5,38 +5,18 @@ import * as React from "react";
 import { Button } from "@quiz-app/components/ui/button";
 
 import {
-  MCQAction,
-  CreateMCQInterface,
-  CreateMultipleChoiceQuestion,
-} from "./components/create-multiple-choice-question";
+  TrueFalseQuestionAction,
+  CreateTrueFalseQuestionInterface,
+  CreateTrueFalseQuestion,
+} from "./components/create-true-false-question";
 
 function reducer(
-  state: CreateMCQInterface[],
-  action: MCQAction
-): CreateMCQInterface[] {
+  state: CreateTrueFalseQuestionInterface[],
+  action: TrueFalseQuestionAction
+): CreateTrueFalseQuestionInterface[] {
   switch (action.type) {
-    case "add option":
-      return state.map((question, index) =>
-        index === action.payload.questionNumber
-          ? {
-              ...question,
-              options: [...question.options, ""],
-            }
-          : question
-      );
     case "add question":
-      return [...state, { answer: "", options: [], question: "" }];
-    case "remove option":
-      return state.map((question, index) =>
-        index === action.payload.questionNumber
-          ? {
-              ...question,
-              options: question.options.filter(
-                (_, i) => i !== action.payload.optionNumber
-              ),
-            }
-          : question
-      );
+      return [...state, { answer: undefined, question: "" }];
     case "remove question":
       return state.filter(
         (_, index) => index !== action.payload.questionNumber
@@ -44,19 +24,9 @@ function reducer(
     case "update answer":
       return state.map((question, index) =>
         index === action.payload.questionNumber
-          ? { ...question, answer: action.payload.newAnswer }
-          : question
-      );
-    case "update option":
-      return state.map((question, index) =>
-        index === action.payload.questionNumber
           ? {
               ...question,
-              options: question.options.map((option, i) =>
-                i === action.payload.optionNumber
-                  ? action.payload.newOption
-                  : option
-              ),
+              answer: action.payload.newAnswer,
             }
           : question
       );
@@ -71,9 +41,9 @@ function reducer(
   }
 }
 
-export function CreateMultipleChoiceQuestionsForm() {
+export function CreateTrueFalseQuestionsForm() {
   const [state, dispatch] = React.useReducer(reducer, [
-    { answer: "", options: [], question: "" },
+    { answer: undefined, question: "" },
   ]);
   const [questionNumber, setQuestionNumber] = React.useState<number>(0);
 
@@ -83,7 +53,7 @@ export function CreateMultipleChoiceQuestionsForm() {
         <b>
           Question {questionNumber + 1} of {state.length}
         </b>
-        <CreateMultipleChoiceQuestion
+        <CreateTrueFalseQuestion
           dispatch={dispatch}
           questionNumber={questionNumber}
           state={state}

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+
 import { CreateMultipleChoiceQuestionsForm } from "./components/create-multiple-choice-questions-form";
 
 export const metadata: Metadata = {

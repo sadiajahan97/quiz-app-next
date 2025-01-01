@@ -1,8 +1,10 @@
 import { Metadata } from "next";
-import { SignUpForm } from "./components/sign-up-form";
 import Link from "next/link";
-import { Button } from "@quiz-app/components/ui/button";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
+
+import { Button } from "@quiz-app/components/ui/button";
+
+import { SignUpForm } from "./components/sign-up-form";
 
 export const metadata: Metadata = {
   title: "Quiz App | Sign Up",

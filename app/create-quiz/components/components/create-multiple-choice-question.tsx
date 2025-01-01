@@ -1,9 +1,19 @@
-import { Input } from "@quiz-app/components/ui/input";
-import { Button } from "@quiz-app/components/ui/button";
-import { Textarea } from "@quiz-app/components/ui/textarea";
 import * as React from "react";
 
-export type Action =
+import { Button } from "@quiz-app/components/ui/button";
+import { Input } from "@quiz-app/components/ui/input";
+import {
+  Select,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+} from "@quiz-app/components/ui/select";
+import { Textarea } from "@quiz-app/components/ui/textarea";
+
+
+
+export type MCQAction =
   | {
       type: "add option";
       payload: { questionNumber: number };
@@ -14,6 +24,10 @@ export type Action =
       payload: { optionNumber: number; questionNumber: number };
     }
   | { type: "remove question"; payload: { questionNumber: number } }
+  | {
+      type: "update answer";
+      payload: { newAnswer: string; questionNumber: number };
+    }
   | {
       type: "update option";
       payload: {
@@ -28,12 +42,13 @@ export type Action =
     };
 
 export interface CreateMCQInterface {
+  answer: string;
   options: string[];
   question: string;
 }
 
 interface CreateMultipleChoiceQuestionProps {
-  dispatch: React.ActionDispatch<[action: Action]>;
+  dispatch: React.ActionDispatch<[action: MCQAction]>;
   questionNumber: number;
   state: CreateMCQInterface[];
 }
@@ -104,6 +119,18 @@ export function CreateMultipleChoiceQuestion({
       >
         Add option
       </Button>
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder="Theme" />
+        </SelectTrigger>
+        <SelectContent>
+          {state[questionNumber]?.options?.map((option, optionNumber) => (
+            <SelectItem key={optionNumber} value={option}>
+              {option}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 }
